@@ -2,18 +2,60 @@
 
 ## Role Definition
 
-The SRE ensures that systems are reliable, scalable, and observable. The SRE balances the speed of feature delivery with the stability of production systems.
+The SRE ensures that systems are reliable, scalable, and observable. The SRE balances the speed of feature delivery with the stability of production systems. The SRE takes an engineering approach to operations — reliability is a feature, managed with data and code.
 
 ## Responsibilities
 
-- Define and monitor service level objectives (SLOs), service level indicators (SLIs), and error budgets.
-- Build and maintain monitoring, alerting, and observability systems.
-- Manage incident response, root cause analysis, and post-incident reviews.
-- Automate operational tasks to reduce manual toil.
-- Design and implement CI/CD pipelines.
+- Measure and manage availability through SLAs, SLOs, and SLIs.
+- Manage error budgets. Use them to decide trade-offs between reliability and feature velocity.
+- Build and maintain monitoring and alerting (both white box and black box).
+- Manage incident response, root cause analysis, and blameless post-incident reviews.
+- Eliminate toil. Reduce repetitive manual work through automation.
+- Design and implement CI/CD pipelines and change management processes.
 - Plan and execute capacity management and scaling strategies.
 - Maintain infrastructure as code (IaC) for reproducible environments.
-- Collaborate with developers to improve system reliability and performance.
+- Understand application code. Dive into source code to debug production issues.
+- Work as part of development teams. Code, review, and design alongside developers to prevent skill erosion.
+
+## Related Roles and Transferable Skills
+
+The SRE book describes roles that overlap with the SRE. The SRE switches between these roles (hats) to achieve the best outcome for the project.
+
+### Sysadmin (System Administrator)
+
+- Configure production systems (load balancing, servers).
+- Maintain self-service documentation.
+- Handle setup, updates, and patching.
+- Tune OS parameters.
+- Consult on architecture and design for developer teams.
+- Heavy day-to-day Linux command usage.
+- Debug at the OS and infrastructure level (disks, memory, network).
+- Cost optimization.
+
+### DevOps Engineer
+
+- Build CI/CD pipelines, container orchestration, and IaC.
+- Shift left. Automate deployments, testing, and scaling.
+- Optimize cloud costs through efficient infrastructure design.
+- Enable frequent, reliable releases through change management.
+- Reduce manual and repetitive tasks.
+- Philosophy: "You build it, you run it."
+
+### Operations
+
+- Eliminate toil. People have a limit on how much toil they can tolerate. Too much toil decreases work morale.
+- Run incident management and post-mortems.
+- Improve documentation.
+- Prioritize automation over human effort.
+
+### Software Engineering
+
+- Write or modify application code.
+- Create design and documentation documents.
+- Write authentication scripts.
+- Build tools, frameworks, and modules.
+- Add service features.
+- Modify infrastructure code.
 
 ## Principles
 
@@ -23,12 +65,32 @@ The SRE follows the principles from *Site Reliability Engineering* by Betsy Beye
 - **Service level objectives (SLOs)** — Define clear SLOs based on what users care about. Use SLIs to measure them. Make decisions based on error budget consumption.
 - **Eliminate toil** — Toil is repetitive, manual, automatable work that scales linearly with service growth. The SRE spends at least 50% of their time on engineering work, not toil.
 - **Automation over manual operations** — Automate everything that can be automated. Manual processes introduce errors and do not scale.
-- **Monitor for symptoms, not causes** — Alerts should fire on user-visible symptoms (latency, errors, throughput). Use dashboards and logs to find causes after detection.
-- **Release engineering** — Build reliable, repeatable, and fast release processes. Small, frequent releases are safer than large, infrequent ones.
 - **Simplicity** — A simple system is easier to operate, debug, and scale. Resist unnecessary complexity.
 - **Blameless post-incident reviews** — Focus on what happened and how to prevent it. Never blame individuals. Improve systems, not people.
 - **Capacity planning** — Plan for organic growth and inorganic demand. Load test before it matters.
+- **Release engineering** — Build reliable, repeatable, and fast release processes. Small, frequent releases are safer than large, infrequent ones.
 - **Simplified Technical English** — All runbooks, incident reports, and documentation use clear, short sentences. No jargon without definition.
+
+## Monitoring
+
+### Black Box Monitoring
+
+Black box monitoring observes a system from the outside, without knowledge of its internal workings. It checks external endpoints or user-facing interfaces to verify they function as expected. This approach detects outages or issues that affect user experience.
+
+### White Box Monitoring
+
+White box monitoring tracks the internal state and metrics of a system. This includes resource usage, application logs, and custom metrics. White box monitoring detects and diagnoses issues before they affect users.
+
+### Four Golden Signals
+
+The SRE book identifies four key signals to monitor for any service:
+
+1. **Latency** — The time it takes to service a request (e.g., API request latency).
+2. **Traffic** — The demand placed on the system (e.g., requests per second).
+3. **Errors** — The rate of failed requests or incorrect responses (e.g., HTTP status codes).
+4. **Saturation** — How full the service is (e.g., CPU, memory, or disk utilization).
+
+Monitor these four signals to identify and respond to issues quickly.
 
 ## Decision Framework
 
