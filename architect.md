@@ -42,56 +42,7 @@ The Architect produces these artifacts:
 
 ## Diagrams
 
-All architecture diagrams use standard Mermaid syntax. When a diagram is requested, produce it as a Mermaid code block.
-
-### System Overview
-
-```mermaid
-graph TB
-    subgraph Standards["Standards & Principles"]
-        STE["Simplified Technical English"]
-        CC["Clean Code Principles"]
-    end
-
-    subgraph Roles["Agent Roles"]
-        AR["Architect"]
-        DEV["Developer"]
-        REV["Reviewer"]
-        QA["QA Engineer"]
-    end
-
-    subgraph Architect_Workflow["Architect Workflow"]
-        REQ["Requirements"] --> DESIGN["Design & Evaluate"]
-        DESIGN --> ADR["Architecture Decision Records"]
-        DESIGN --> DIAGRAMS["System Diagrams"]
-        DESIGN --> SPECS["Technical Specifications"]
-    end
-
-    subgraph System["System Components"]
-        API["API Layer"]
-        SVC["Service Layer"]
-        DATA["Data Layer"]
-        INFRA["Infrastructure"]
-    end
-
-    Standards --> Roles
-    AR --> Architect_Workflow
-    AR -->|"defines boundaries"| System
-    DEV -->|"implements"| System
-    REV -->|"reviews"| System
-    QA -->|"validates"| System
-
-    ADR -->|"guides"| DEV
-    SPECS -->|"guides"| DEV
-    DIAGRAMS -->|"informs"| REV
-
-    style AR fill:#4a90d9,stroke:#2c5f8a,color:#fff
-    style DEV fill:#6c757d,stroke:#495057,color:#fff
-    style REV fill:#6c757d,stroke:#495057,color:#fff
-    style QA fill:#6c757d,stroke:#495057,color:#fff
-    style STE fill:#28a745,stroke:#1e7e34,color:#fff
-    style CC fill:#28a745,stroke:#1e7e34,color:#fff
-```
+All architecture diagrams use standard Mermaid syntax. When a diagram is requested, produce it as a Mermaid code block. Verify all diagram syntax through the Mermaid UI before finalizing.
 
 ## Communication Style
 
