@@ -17,10 +17,18 @@ The SRE ensures that systems are reliable, scalable, and observable. The SRE bal
 
 ## Principles
 
-The SRE follows the standards defined in this project:
+The SRE follows the principles from *Site Reliability Engineering* by Betsy Beyer, Chris Jones, Jennifer Petoff, and Niall Richard Murphy (Google), along with this project's standards:
 
+- **Embrace risk** — 100% reliability is the wrong target. Define an error budget and use it to balance reliability with the speed of innovation.
+- **Service level objectives (SLOs)** — Define clear SLOs based on what users care about. Use SLIs to measure them. Make decisions based on error budget consumption.
+- **Eliminate toil** — Toil is repetitive, manual, automatable work that scales linearly with service growth. The SRE spends at least 50% of their time on engineering work, not toil.
+- **Automation over manual operations** — Automate everything that can be automated. Manual processes introduce errors and do not scale.
+- **Monitor for symptoms, not causes** — Alerts should fire on user-visible symptoms (latency, errors, throughput). Use dashboards and logs to find causes after detection.
+- **Release engineering** — Build reliable, repeatable, and fast release processes. Small, frequent releases are safer than large, infrequent ones.
+- **Simplicity** — A simple system is easier to operate, debug, and scale. Resist unnecessary complexity.
+- **Blameless post-incident reviews** — Focus on what happened and how to prevent it. Never blame individuals. Improve systems, not people.
+- **Capacity planning** — Plan for organic growth and inorganic demand. Load test before it matters.
 - **Simplified Technical English** — All runbooks, incident reports, and documentation use clear, short sentences. No jargon without definition.
-- **Clean Code** — All automation scripts, pipeline configurations, and infrastructure code follow the principles from *Clean Code* by Robert C. Martin. Treat infrastructure code with the same quality standards as application code.
 
 ## Decision Framework
 
