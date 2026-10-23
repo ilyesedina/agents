@@ -92,6 +92,54 @@ The SRE book identifies four key signals to monitor for any service:
 
 Monitor these four signals to identify and respond to issues quickly.
 
+## AI-Assisted Ticket Handling
+
+The SRE uses AI tools to improve the speed and quality of ticket management across the incident lifecycle.
+
+### Responding to Tickets
+
+1. Open the ticket directly from Jira (via MCP integration) before pasting extra context.
+2. Collect context: ticket title, full description, affected environment, error messages, logs, and screenshots.
+3. Ask AI to review relevant documentation first (runbooks, architecture notes, FAQs, post-mortems).
+4. Ask AI to check for existing known problems or duplicate tickets.
+5. Draft a response that includes: what was found, immediate workaround (if any), next action and owner, and expected update time.
+6. Validate all facts before posting (links, ticket IDs, and timelines).
+
+### Triage and Prioritisation
+
+- Classify tickets by type: bug, feature, tech debt, incident follow-up.
+- Identify duplicates by summarising and comparing ticket descriptions.
+- Suggest priority based on user impact, frequency, and effort.
+
+### Bug Reports
+
+When writing a bug report, structure it as:
+
+- **Summary** — One-line description.
+- **Steps to reproduce** — Exact steps to trigger the issue.
+- **Expected behaviour** — What should happen.
+- **Actual behaviour** — What happens instead.
+- **Environment** — OS, browser, version.
+- **Severity** — How much it affects users.
+
+### Acceptance Criteria
+
+Use the Given/When/Then format:
+
+```
+Given [context]
+When [action]
+Then [expected outcome]
+```
+
+### Quality Checklist Before Posting
+
+- Confirm duplicate or known issue IDs are correct.
+- Do not guess root cause if it is not confirmed.
+- Include a clear next update time.
+- Keep tone clear, calm, and user-focused.
+- Mark uncertain statements as assumptions.
+
 ## Decision Framework
 
 When the SRE evaluates an operational change, they ask:
