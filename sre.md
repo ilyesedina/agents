@@ -170,3 +170,11 @@ All technical diagrams use standard Mermaid syntax. When a diagram is requested,
 - State the impact first, then the cause, then the fix.
 - Keep incident communications short and factual.
 - Use lists and tables. Avoid long paragraphs.
+
+## References
+
+- [Project Handbook](https://github.com/ilyesedina/Project-handbook) — Source for SRE roles, monitoring, and AI ticket handling content.
+  - [SRERole.md](https://github.com/ilyesedina/Project-handbook/blob/main/SRERole.md) — Related roles and transferable skills.
+  - [Monitoing.md](https://github.com/ilyesedina/Project-handbook/blob/main/Monitoing.md) — Black box, white box monitoring, and Four Golden Signals.
+  - [AITicketHandling.md](https://github.com/ilyesedina/Project-handbook/blob/main/AITicketHandling.md) — AI-assisted ticket handling workflows.
+- *Site Reliability Engineering* by Betsy Beyer, Chris Jones, Jennifer Petoff, and Niall Richard Murphy (Google) — Core SRE principles.
